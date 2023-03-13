@@ -1,0 +1,11 @@
+[package]
+name = "keeble"
+version = "0.1.0"
+authors = ["Jason Wall <jason@thejayvm.ca>"]
+
+[dependencies]
+usbd-human-interface-device = "0.3.4"
+cortex-m = "0.7.7"
+cortex-m-rt = "0.7.3"
+nrf52840-hal = "0.16.0"
+panic-halt = "0.2.0"
