@@ -6,6 +6,7 @@ edition = "2018"
 
 [dependencies]
 usb-device = "0.2.7"
+cortex-m = { version = "0.7.6", features = ["critical-section-single-core"] } # features for enabling -Tlink.x
 cortex-m-rt = "0.7.3"
 nrf52840-hal = "0.16.0"
 panic-semihosting = "0.6.0"
