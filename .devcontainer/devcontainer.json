@@ -1,4 +1,4 @@
 {
     "name": "Rust",
-    "image": "mcr.microsoft.com/devcontainers/rust:0.203-bullseye"
+    "image": "mcr.microsoft.com/devcontainers/rust:1.0.2-bullseye"
 }
