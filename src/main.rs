@@ -6,7 +6,7 @@ use panic_semihosting as _;
 use cortex_m_rt::entry;
 use nrf52840_hal::clocks::Clocks;
 use nrf52840_hal::usbd::{UsbPeripheral, Usbd};
-use usb_device::class_prelude::{UsbBusAllocator, UsbBus};
+use usb_device::class_prelude::UsbBusAllocator;
 use usb_device::device::{UsbDeviceBuilder, UsbVidPid};
 use usbd_serial::{SerialPort, USB_CLASS_CDC};
 
