@@ -10,8 +10,6 @@ use usb_device::class_prelude::{UsbBusAllocator, UsbBus};
 use usb_device::device::{UsbDeviceBuilder, UsbVidPid};
 use usbd_serial::{SerialPort, USB_CLASS_CDC};
 
-
-
 #[entry]
 fn main() -> ! {
     let periph = nrf52840_hal::pac::Peripherals::take().unwrap();
