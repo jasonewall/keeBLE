@@ -5,6 +5,7 @@ use panic_semihosting as _;
 
 use cortex_m_rt::entry;
 use nrf52840_hal::clocks::Clocks;
+use nrf52840_hal::pac::Peripherals;
 use nrf52840_hal::usbd::{UsbPeripheral, Usbd};
 use usb_device::class_prelude::UsbBusAllocator;
 use usb_device::device::{UsbDeviceBuilder, UsbVidPid};
@@ -12,7 +13,7 @@ use usbd_serial::{SerialPort, USB_CLASS_CDC};
 
 #[entry]
 fn main() -> ! {
-    let periph = nrf52840_hal::pac::Peripherals::take().unwrap();
+    let periph: Peripherals = Peripherals::take().unwrap();
     let clocks = Clocks::new(periph.CLOCK);
     let clocks = clocks.enable_ext_hfosc();
 
@@ -20,9 +21,9 @@ fn main() -> ! {
     let mut serial = SerialPort::new(&usb_bus);
 
     let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x16c0, 0x27dd))
-        .manufacturer("@thejayvm Solutions")
-        .product("keeBLE Adapter Debug Serial port")
-        .serial_number("nice!nano")
+        .manufacturer("thejayvmSolutions")
+        .product("keeBLE Adapter")
+        .serial_number("KEEBLEDBG")
         .device_class(USB_CLASS_CDC)
         .max_packet_size_0(64)
         .build();
